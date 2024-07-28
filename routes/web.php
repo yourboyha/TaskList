@@ -67,7 +67,8 @@ Route::get('/tasks', function () {
     return view('index', [
         // 'tasks' => \App\Models\Task::all()
         // 'tasks' => Task::latest()->where('completed', true)->get()
-        'tasks' => Task::latest()->get()
+        // 'tasks' => Task::latest()->get()
+        'tasks' => Task::latest()->paginate(10)
     ]);
 })->name('tasks.index');
 
