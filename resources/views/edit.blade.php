@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Edit Task')
+{{-- @section('title', 'Edit Task')
 
 @section('styles')
 <style>
@@ -9,12 +9,14 @@
     font-size: 0.8rem;
   }
 </style>
-@endsection
+@endsection --}}
+
+
 
 @section('content')
   {{-- {{$errors}} --}}
 
-  <form method="POST" action="{{route('tasks.update',['task'=>$task->id])}}">
+  {{-- <form method="POST" action="{{route('tasks.update',['task'=>$task->id])}}">
     @csrf
     @method('PUT')
     <div>
@@ -47,7 +49,9 @@
       <button type="submit">Edit task</button>
     </div>
 
-  </form>
+  </form> --}}
+
+  @include('form', ['task'=>$task])
 
 @endsection
 
